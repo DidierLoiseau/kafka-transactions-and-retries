@@ -3,6 +3,13 @@ spring:
     function:
       definition: consumeMessage
     stream:
+      default:
+        consumer:
+          retryable-exceptions:
+            java.lang.ArrayIndexOutOfBoundsException: true
+            org.hibernate.exception.DataException: true
+            java.lang.ArithmeticException: false
+            java.lang.ArithmeticException2: false
       kafka:
         binder:
           transaction:
